@@ -15,6 +15,8 @@
 		B1137EEE2282C7FC00C0168E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1137EEC2282C7FC00C0168E /* LaunchScreen.storyboard */; };
 		B1137EF92282C7FC00C0168E /* SavingCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1137EF82282C7FC00C0168E /* SavingCoreDataTests.swift */; };
 		B1137F042282D07100C0168E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1137F032282D07100C0168E /* PersistenceService.swift */; };
+		B1137F072282D70700C0168E /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1137F052282D70700C0168E /* Person+CoreDataClass.swift */; };
+		B1137F082282D70700C0168E /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1137F062282D70700C0168E /* Person+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		B1137EF82282C7FC00C0168E /* SavingCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingCoreDataTests.swift; sourceTree = "<group>"; };
 		B1137EFA2282C7FC00C0168E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1137F032282D07100C0168E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		B1137F052282D70700C0168E /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B1137F062282D70700C0168E /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 		B1137EDF2282C7FB00C0168E /* SavingCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				B1137F052282D70700C0168E /* Person+CoreDataClass.swift */,
+				B1137F062282D70700C0168E /* Person+CoreDataProperties.swift */,
 				B1137EE02282C7FB00C0168E /* AppDelegate.swift */,
 				B1137EE22282C7FB00C0168E /* ViewController.swift */,
 				B1137EE42282C7FB00C0168E /* Main.storyboard */,
@@ -205,6 +211,8 @@
 			files = (
 				B1137EE32282C7FB00C0168E /* ViewController.swift in Sources */,
 				B1137F042282D07100C0168E /* PersistenceService.swift in Sources */,
+				B1137F082282D70700C0168E /* Person+CoreDataProperties.swift in Sources */,
+				B1137F072282D70700C0168E /* Person+CoreDataClass.swift in Sources */,
 				B1137EE92282C7FB00C0168E /* SavingCoreData.xcdatamodeld in Sources */,
 				B1137EE12282C7FB00C0168E /* AppDelegate.swift in Sources */,
 			);

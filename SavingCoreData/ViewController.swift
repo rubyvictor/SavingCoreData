@@ -7,16 +7,26 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var people = [String]()
+    var people = [Person]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundColor = .blue
+
+        let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
+        
+        do {
+            let persons = try PersistenceService.context.fetch(fetchRequest)
+            self.people = persons
+            self.tableView.reloadData()
+        } catch let fetchErr {
+            print("Failed to fetch request\(fetchErr)")
+        }
     }
 
     @IBAction func didClickPlusButton(_ sender: Any) {
@@ -37,6 +47,17 @@ class ViewController: UIViewController {
             let name = alert.textFields?.first?.text
             let age = alert.textFields?.last?.text
             print("name\(name)", "age\(age)")
+            
+            let person = Person(context: PersistenceService.context)
+            person.name = name
+            
+            guard let unwrappedAge = Int16(age ?? "") else { return }
+            person.age = unwrappedAge
+            
+            PersistenceService.saveContext()
+            
+            self.people.append(person)
+            self.tableView.reloadData()
         }
         
         alert.addAction(action)
@@ -54,8 +75,8 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
         
-        cell.textLabel?.text = ""
-        cell.detailTextLabel?.text = ""
+        cell.textLabel?.text = people[indexPath.row].name
+        cell.detailTextLabel?.text = String(people[indexPath.row].age)
         
         return cell
     }
